@@ -47,11 +47,45 @@
       <name>edu.cmu.cs.wfeely.hw1.Question</name>
       <description>Question type.</description>
       <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>qstring</name>
+          <description>String for question text.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>tokens</name>
+          <description>Array of strings for tokens from question string.</description>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+      </features>
     </typeDescription>
     <typeDescription>
       <name>edu.cmu.cs.wfeely.hw1.Answer</name>
       <description>Answer Type.</description>
       <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>astring</name>
+          <description>String for answer text.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>tokens</name>
+          <description>Array of strings for tokens from answer string.</description>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>gold</name>
+          <description>Boolean gold standard (0 for not-an-answer, 1 for good-answer).</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>guess</name>
+          <description>Boolean guess (0 for not-an-answer, 1 for good-answer).</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      </features>
     </typeDescription>
   </types>
 </typeSystemDescription>
