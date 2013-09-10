@@ -13,7 +13,7 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** Answer Type.
- * Updated by JCasGen Mon Sep 09 21:09:54 EDT 2013
+ * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
  * XML source: /home/hermes/git/hw1-wfeely/hw1-wfeely/src/main/resources/hw1-wfeely-typesystem.xml
  * @generated */
 public class Answer extends BaseAnnotation {
@@ -148,6 +148,24 @@ public class Answer extends BaseAnnotation {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_guess == null)
       jcasType.jcas.throwFeatMissing("guess", "edu.cmu.cs.wfeely.hw1.Answer");
     jcasType.ll_cas.ll_setBooleanValue(addr, ((Answer_Type)jcasType).casFeatCode_guess, v);}    
+   
+    
+  //*--------------*
+  //* Feature: agrams
+
+  /** getter for agrams - gets Answer ngrams.
+   * @generated */
+  public Ngram getAgrams() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_agrams == null)
+      jcasType.jcas.throwFeatMissing("agrams", "edu.cmu.cs.wfeely.hw1.Answer");
+    return (Ngram)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_agrams)));}
+    
+  /** setter for agrams - sets Answer ngrams. 
+   * @generated */
+  public void setAgrams(Ngram v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_agrams == null)
+      jcasType.jcas.throwFeatMissing("agrams", "edu.cmu.cs.wfeely.hw1.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_agrams, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

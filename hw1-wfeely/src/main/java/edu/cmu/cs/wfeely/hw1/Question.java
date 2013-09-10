@@ -13,7 +13,7 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** Question type.
- * Updated by JCasGen Mon Sep 09 21:09:54 EDT 2013
+ * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
  * XML source: /home/hermes/git/hw1-wfeely/hw1-wfeely/src/main/resources/hw1-wfeely-typesystem.xml
  * @generated */
 public class Question extends BaseAnnotation {
@@ -112,6 +112,24 @@ public class Question extends BaseAnnotation {
       jcasType.jcas.throwFeatMissing("tokens", "edu.cmu.cs.wfeely.hw1.Question");
     jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_tokens), i);
     jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_tokens), i, v);}
+   
+    
+  //*--------------*
+  //* Feature: qgrams
+
+  /** getter for qgrams - gets Question ngrams.
+   * @generated */
+  public Ngram getQgrams() {
+    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_qgrams == null)
+      jcasType.jcas.throwFeatMissing("qgrams", "edu.cmu.cs.wfeely.hw1.Question");
+    return (Ngram)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_qgrams)));}
+    
+  /** setter for qgrams - sets Question ngrams. 
+   * @generated */
+  public void setQgrams(Ngram v) {
+    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_qgrams == null)
+      jcasType.jcas.throwFeatMissing("qgrams", "edu.cmu.cs.wfeely.hw1.Question");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Question_Type)jcasType).casFeatCode_qgrams, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Question type.
- * Updated by JCasGen Mon Sep 09 21:09:54 EDT 2013
+ * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
  * @generated */
 public class Question_Type extends BaseAnnotation_Type {
   /** @generated */
@@ -100,6 +100,24 @@ public class Question_Type extends BaseAnnotation_Type {
     ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v);
   }
  
+ 
+  /** @generated */
+  final Feature casFeat_qgrams;
+  /** @generated */
+  final int     casFeatCode_qgrams;
+  /** @generated */ 
+  public int getQgrams(int addr) {
+        if (featOkTst && casFeat_qgrams == null)
+      jcas.throwFeatMissing("qgrams", "edu.cmu.cs.wfeely.hw1.Question");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_qgrams);
+  }
+  /** @generated */    
+  public void setQgrams(int addr, int v) {
+        if (featOkTst && casFeat_qgrams == null)
+      jcas.throwFeatMissing("qgrams", "edu.cmu.cs.wfeely.hw1.Question");
+    ll_cas.ll_setRefValue(addr, casFeatCode_qgrams, v);}
+    
+  
 
 
 
@@ -116,6 +134,10 @@ public class Question_Type extends BaseAnnotation_Type {
  
     casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.StringArray", featOkTst);
     casFeatCode_tokens  = (null == casFeat_tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokens).getCode();
+
+ 
+    casFeat_qgrams = jcas.getRequiredFeatureDE(casType, "qgrams", "edu.cmu.cs.wfeely.hw1.Ngram", featOkTst);
+    casFeatCode_qgrams  = (null == casFeat_qgrams) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_qgrams).getCode();
 
   }
 }

@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Answer Type.
- * Updated by JCasGen Mon Sep 09 21:09:54 EDT 2013
+ * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
  * @generated */
 public class Answer_Type extends BaseAnnotation_Type {
   /** @generated */
@@ -136,6 +136,24 @@ public class Answer_Type extends BaseAnnotation_Type {
     ll_cas.ll_setBooleanValue(addr, casFeatCode_guess, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_agrams;
+  /** @generated */
+  final int     casFeatCode_agrams;
+  /** @generated */ 
+  public int getAgrams(int addr) {
+        if (featOkTst && casFeat_agrams == null)
+      jcas.throwFeatMissing("agrams", "edu.cmu.cs.wfeely.hw1.Answer");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_agrams);
+  }
+  /** @generated */    
+  public void setAgrams(int addr, int v) {
+        if (featOkTst && casFeat_agrams == null)
+      jcas.throwFeatMissing("agrams", "edu.cmu.cs.wfeely.hw1.Answer");
+    ll_cas.ll_setRefValue(addr, casFeatCode_agrams, v);}
+    
+  
 
 
 
@@ -160,6 +178,10 @@ public class Answer_Type extends BaseAnnotation_Type {
  
     casFeat_guess = jcas.getRequiredFeatureDE(casType, "guess", "uima.cas.Boolean", featOkTst);
     casFeatCode_guess  = (null == casFeat_guess) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_guess).getCode();
+
+ 
+    casFeat_agrams = jcas.getRequiredFeatureDE(casType, "agrams", "edu.cmu.cs.wfeely.hw1.Ngram", featOkTst);
+    casFeatCode_agrams  = (null == casFeat_agrams) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_agrams).getCode();
 
   }
 }

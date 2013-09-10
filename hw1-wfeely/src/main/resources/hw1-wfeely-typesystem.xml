@@ -58,6 +58,11 @@
           <description>Array of strings for tokens from question string.</description>
           <rangeTypeName>uima.cas.StringArray</rangeTypeName>
         </featureDescription>
+        <featureDescription>
+          <name>qgrams</name>
+          <description>Question ngrams.</description>
+          <rangeTypeName>edu.cmu.cs.wfeely.hw1.Ngram</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
@@ -84,6 +89,33 @@
           <name>guess</name>
           <description>Boolean guess (0 for not-an-answer, 1 for good-answer).</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>agrams</name>
+          <description>Answer ngrams.</description>
+          <rangeTypeName>edu.cmu.cs.wfeely.hw1.Ngram</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>edu.cmu.cs.wfeely.hw1.Ngram</name>
+      <description>Ngram type for ngrams.</description>
+      <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>unigrams</name>
+          <description>Array of unigram strings (single token words).</description>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>bigrams</name>
+          <description>Array of bigram strings (2-token pairs).</description>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>trigrams</name>
+          <description>Array of trigram strings (3-token triples).</description>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
