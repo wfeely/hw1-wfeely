@@ -36,7 +36,22 @@
 					<description>String feature source.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
-			</features>
+			<featureDescription>
+          <name>confidence</name>
+          <description>Numeric feature confidence.</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      </features>
 		</typeDescription>
-	</types>
+	<typeDescription>
+      <name>edu.cmu.cs.wfeely.hw1.Question</name>
+      <description>Question type.</description>
+      <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>edu.cmu.cs.wfeely.hw1.Answer</name>
+      <description>Answer Type.</description>
+      <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+    </typeDescription>
+  </types>
 </typeSystemDescription>

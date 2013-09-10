@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Mon Sep 09 20:44:26 EDT 2013
+ * Updated by JCasGen Mon Sep 09 20:58:54 EDT 2013
  * @generated */
 public class BaseAnnotation_Type extends Annotation_Type {
   /** @generated */
@@ -61,6 +61,24 @@ public class BaseAnnotation_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_source, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_confidence;
+  /** @generated */
+  final int     casFeatCode_confidence;
+  /** @generated */ 
+  public double getConfidence(int addr) {
+        if (featOkTst && casFeat_confidence == null)
+      jcas.throwFeatMissing("confidence", "edu.cmu.cs.wfeely.hw1.BaseAnnotation");
+    return ll_cas.ll_getDoubleValue(addr, casFeatCode_confidence);
+  }
+  /** @generated */    
+  public void setConfidence(int addr, double v) {
+        if (featOkTst && casFeat_confidence == null)
+      jcas.throwFeatMissing("confidence", "edu.cmu.cs.wfeely.hw1.BaseAnnotation");
+    ll_cas.ll_setDoubleValue(addr, casFeatCode_confidence, v);}
+    
+  
 
 
 
@@ -73,6 +91,10 @@ public class BaseAnnotation_Type extends Annotation_Type {
  
     casFeat_source = jcas.getRequiredFeatureDE(casType, "source", "uima.cas.String", featOkTst);
     casFeatCode_source  = (null == casFeat_source) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_source).getCode();
+
+ 
+    casFeat_confidence = jcas.getRequiredFeatureDE(casType, "confidence", "uima.cas.Double", featOkTst);
+    casFeatCode_confidence  = (null == casFeat_confidence) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_confidence).getCode();
 
   }
 }

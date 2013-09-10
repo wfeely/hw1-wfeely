@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Mon Sep 09 20:44:26 EDT 2013
+ * Updated by JCasGen Mon Sep 09 20:58:54 EDT 2013
  * XML source: /home/hermes/git/hw1-wfeely/hw1-wfeely/src/main/resources/hw1-wfeely-typesystem.xml
  * @generated */
 public class BaseAnnotation extends Annotation {
@@ -78,6 +78,24 @@ public class BaseAnnotation extends Annotation {
     if (BaseAnnotation_Type.featOkTst && ((BaseAnnotation_Type)jcasType).casFeat_source == null)
       jcasType.jcas.throwFeatMissing("source", "edu.cmu.cs.wfeely.hw1.BaseAnnotation");
     jcasType.ll_cas.ll_setStringValue(addr, ((BaseAnnotation_Type)jcasType).casFeatCode_source, v);}    
+   
+    
+  //*--------------*
+  //* Feature: confidence
+
+  /** getter for confidence - gets Numeric feature confidence.
+   * @generated */
+  public double getConfidence() {
+    if (BaseAnnotation_Type.featOkTst && ((BaseAnnotation_Type)jcasType).casFeat_confidence == null)
+      jcasType.jcas.throwFeatMissing("confidence", "edu.cmu.cs.wfeely.hw1.BaseAnnotation");
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((BaseAnnotation_Type)jcasType).casFeatCode_confidence);}
+    
+  /** setter for confidence - sets Numeric feature confidence. 
+   * @generated */
+  public void setConfidence(double v) {
+    if (BaseAnnotation_Type.featOkTst && ((BaseAnnotation_Type)jcasType).casFeat_confidence == null)
+      jcasType.jcas.throwFeatMissing("confidence", "edu.cmu.cs.wfeely.hw1.BaseAnnotation");
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((BaseAnnotation_Type)jcasType).casFeatCode_confidence, v);}    
   }
 
     
