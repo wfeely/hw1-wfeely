@@ -1,0 +1,90 @@
+% hw1-wfeely-report.tex
+\documentclass[11pt]{article}
+
+\begin{document}
+\title{\textbf{Design and Engineering of Intelligent Information Systems (DEIIS)}\\
+	Homework \#1}
+\author{Weston Feely \\ andrew ID: wfeely \\ email: wfeely@cs.cmu.edu}
+\date{September 11, 2013}
+\maketitle
+
+\section*{Type System Description}
+My type system includes the following types.
+
+\subsection{BaseAnnotation}
+The base annotation type required by the assignment description. This includes two features. \\ \\
+Features:
+\begin{itemize}
+\item string source: string to help keep track of where an annotation was originally made.
+\item double confidence: how confident the annotation was.
+\end{itemize}
+
+\subsection{Question}
+The question type for representing questions from the input data. This includes six features. \\ \\
+Features:
+\begin{itemize}
+\item int begin: the beginning character offset for the question string.
+\item int end: the ending character offset for the question string.
+\item FSArray(Token) tokens: a Token array of tokens, for representing words from the question string.
+\item FSArray(Ngram) unigrams: a Ngram array of bigrams, for representing 1-token strings from the question 
+string. (similar to tokens).
+\item FSArray(Ngram) bigrams: a Ngram array of bigrams, for representing 2-token strings from the question 
+string.
+\item FSArray(Ngram) trigrams: a Ngram array of trigrams, for representing 3-token strings from the question 
+string.
+\end{itemize}
+
+\subsection{Answer}
+The answer type for representing answers from the input data. This includes eight features. \\ \\
+Features:
+\begin{itemize}
+\item int begin: the beginning character offset for the answer string.
+\item int end: the ending character offset for the answer string.
+\item FSArray(Token) tokens: a Token array of tokens, for representing words from the answer string.
+\item FSArray(Ngram) unigrams: a Ngram array of bigrams, for representing 1-token strings from the answer 
+string. (similar to tokens).
+\item FSArray(Ngram) bigrams: a Ngram array of bigrams, for representing 2-token strings from the answer 
+string.
+\item FSArray(Ngram) trigrams: a Ngram array of trigrams, for representing 3-token strings from the answer 
+string.
+\item boolean gold: boolean for representing the 1 or 0 from the answer input text, which represents whether 
+this is a good answer or a bad answer.
+\item boolean guess: boolean for representing the guess (0 or 1) for whether this answer is good (1) or bad 
+(0), based on the other features (excluding the gold variable).
+\end{itemize}
+
+\subsection{Token}
+Token type for representing the words in a sentence. This includes three features. \\ \\
+Features:
+\begin{itemize}
+\item int begin: the beginning character offset for the token.
+\item int end: the ending character offset for the token.
+\item string token: the string for the word token, itself.
+\end{itemize}
+
+\subsection{Ngram}
+Ngram type for representing the ngrams (space-separated strings of words) in a sentence. This includes four 
+features. \\ \\
+Features:
+\begin{itemize}
+\item int order: the order of the ngram represented (1 for unigram, 2 for bigram, 3 for trigram).
+\item int begin: the beginning character offset for the ngram.
+\item int end: the ending character offset for the ngram.
+\item string ngram: the string for the ngram, itself.
+\end{itemize}
+
+\subsection{Eval}
+Evaluation type for representing evaluation objects. These objects wrap together the answers, and their 
+corresponding question, along with the features necessary to perform scoring and ranking of answers, as well
+as the final performance evaluation for a given input data set. This includes five features. \\ \\
+Features:
+\begin{itemize}
+\item Question question: question object for the question in this data set.
+\item FSArray(Answer) answers: answer object array for the answers in this data set.
+\item doubleArray performance: scores for each answer in this data set.
+\item int n: the number of correct answers in this data set.
+\item double p: the precision for this data set (\# answers guessed correct divided by the number of total 
+correct answers in this data set, n).
+\end{itemize}
+
+\end{document}
