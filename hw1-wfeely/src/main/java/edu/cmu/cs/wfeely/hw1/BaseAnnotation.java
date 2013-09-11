@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** 
- * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
+/** Base annotation type.
+ * Updated by JCasGen Wed Sep 11 19:14:02 EDT 2013
  * XML source: /home/hermes/git/hw1-wfeely/hw1-wfeely/src/main/resources/hw1-wfeely-typesystem.xml
  * @generated */
 public class BaseAnnotation extends Annotation {

@@ -28,7 +28,7 @@
   <types>
 		<typeDescription>
 			<name>edu.cmu.cs.wfeely.hw1.BaseAnnotation</name>
-			<description/>
+			<description>Base annotation type.</description>
 			<supertypeName>uima.tcas.Annotation</supertypeName>
 			<features>
 				<featureDescription>
@@ -49,19 +49,38 @@
       <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
       <features>
         <featureDescription>
-          <name>qstring</name>
-          <description>String for question text.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
+          <name>begin</name>
+          <description>Beginning character offset for question string.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>end</name>
+          <description>Ending character offset for question string.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
         <featureDescription>
           <name>tokens</name>
-          <description>Array of strings for tokens from question string.</description>
-          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+          <description>Token array for tokens from question string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Token</elementType>
         </featureDescription>
         <featureDescription>
-          <name>qgrams</name>
-          <description>Question ngrams.</description>
-          <rangeTypeName>edu.cmu.cs.wfeely.hw1.Ngram</rangeTypeName>
+          <name>unigrams</name>
+          <description>Ngram array for unigrams (1-order ngrams) from question string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>bigrams</name>
+          <description>Ngram array for bigrams (2-order ngrams) from question string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>trigrams</name>
+          <description>Ngram array for trigrams (3-order ngrams) from question string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
         </featureDescription>
       </features>
     </typeDescription>
@@ -71,51 +90,130 @@
       <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
       <features>
         <featureDescription>
-          <name>astring</name>
-          <description>String for answer text.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>tokens</name>
-          <description>Array of strings for tokens from answer string.</description>
-          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
           <name>gold</name>
-          <description>Boolean gold standard (0 for not-an-answer, 1 for good-answer).</description>
+          <description>Boolean gold standard [0,1].  0 means "not an answer", 1 means "good answer."</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
         <featureDescription>
           <name>guess</name>
-          <description>Boolean guess (0 for not-an-answer, 1 for good-answer).</description>
+          <description>Boolean guess [0,1]. 0 means "not an answer", 1 means "good answer."</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>agrams</name>
-          <description>Answer ngrams.</description>
-          <rangeTypeName>edu.cmu.cs.wfeely.hw1.Ngram</rangeTypeName>
+          <name>begin</name>
+          <description>Beginning character offset for answer string.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>end</name>
+          <description>Ending character offset for answer string.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>tokens</name>
+          <description>Token array for tokens from answer string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Token</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>unigrams</name>
+          <description>Ngram array for unigrams (1-order ngrams) from answer string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>bigrams</name>
+          <description>Ngram array for bigrams (2-order ngrams) from answer string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>trigrams</name>
+          <description>Ngram array for trigrams (3-order ngrams) from answer string.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Ngram</elementType>
         </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
       <name>edu.cmu.cs.wfeely.hw1.Ngram</name>
-      <description>Ngram type for ngrams.</description>
+      <description>Ngram (space-separated string of n tokens) type.</description>
       <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
       <features>
         <featureDescription>
-          <name>unigrams</name>
-          <description>Array of unigram strings (single token words).</description>
-          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+          <name>begin</name>
+          <description>Beginning character offset for ngram.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>bigrams</name>
-          <description>Array of bigram strings (2-token pairs).</description>
-          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+          <name>end</name>
+          <description>Ending character offset for ngram.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>trigrams</name>
-          <description>Array of trigram strings (3-token triples).</description>
-          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+          <name>ngram</name>
+          <description>Ngram string.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>order</name>
+          <description>Ngram order [1..3].</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>edu.cmu.cs.wfeely.hw1.Token</name>
+      <description>Token type.</description>
+      <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>begin</name>
+          <description>Beginning character offset for token.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>end</name>
+          <description>Ending character offset for token.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>token</name>
+          <description>Token string.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>edu.cmu.cs.wfeely.hw1.Eval</name>
+      <description>Evaluation type. For answer scoring, ranking, and calculation of precision for each question and its set of answers.</description>
+      <supertypeName>edu.cmu.cs.wfeely.hw1.BaseAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>question</name>
+          <description>Question object.</description>
+          <rangeTypeName>edu.cmu.cs.wfeely.hw1.Question</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>answer</name>
+          <description>Answer object array.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.cs.wfeely.hw1.Answer</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>performance</name>
+          <description>Double array for score of each answer [0..1].</description>
+          <rangeTypeName>uima.cas.DoubleArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>p</name>
+          <description>Double p; precision of system (normalized by n).</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>n</name>
+          <description>Integer n; number of correct answers.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

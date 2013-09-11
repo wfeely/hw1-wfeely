@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.cas.StringArray;
 
 
-/** Ngram type for ngrams.
- * Updated by JCasGen Mon Sep 09 21:14:30 EDT 2013
+/** Ngram (space-separated string of n tokens) type.
+ * Updated by JCasGen Wed Sep 11 19:14:02 EDT 2013
  * XML source: /home/hermes/git/hw1-wfeely/hw1-wfeely/src/main/resources/hw1-wfeely-typesystem.xml
  * @generated */
 public class Ngram extends BaseAnnotation {
@@ -63,105 +63,75 @@ public class Ngram extends BaseAnnotation {
  
     
   //*--------------*
-  //* Feature: unigrams
+  //* Feature: begin
 
-  /** getter for unigrams - gets Array of unigram strings (single token words).
+  /** getter for begin - gets Beginning character offset for ngram.
    * @generated */
-  public StringArray getUnigrams() {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_unigrams == null)
-      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams)));}
+  public int getBegin() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_begin == null)
+      jcasType.jcas.throwFeatMissing("begin", "edu.cmu.cs.wfeely.hw1.Ngram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_begin);}
     
-  /** setter for unigrams - sets Array of unigram strings (single token words). 
+  /** setter for begin - sets Beginning character offset for ngram. 
    * @generated */
-  public void setUnigrams(StringArray v) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_unigrams == null)
-      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams, jcasType.ll_cas.ll_getFSRef(v));}    
-    
-  /** indexed getter for unigrams - gets an indexed value - Array of unigram strings (single token words).
-   * @generated */
-  public String getUnigrams(int i) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_unigrams == null)
-      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams), i);
-    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams), i);}
-
-  /** indexed setter for unigrams - sets an indexed value - Array of unigram strings (single token words).
-   * @generated */
-  public void setUnigrams(int i, String v) { 
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_unigrams == null)
-      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams), i);
-    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_unigrams), i, v);}
+  public void setBegin(int v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_begin == null)
+      jcasType.jcas.throwFeatMissing("begin", "edu.cmu.cs.wfeely.hw1.Ngram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_begin, v);}    
    
     
   //*--------------*
-  //* Feature: bigrams
+  //* Feature: end
 
-  /** getter for bigrams - gets Array of bigram strings (2-token pairs).
+  /** getter for end - gets Ending character offset for ngram.
    * @generated */
-  public StringArray getBigrams() {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_bigrams == null)
-      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams)));}
+  public int getEnd() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_end == null)
+      jcasType.jcas.throwFeatMissing("end", "edu.cmu.cs.wfeely.hw1.Ngram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_end);}
     
-  /** setter for bigrams - sets Array of bigram strings (2-token pairs). 
+  /** setter for end - sets Ending character offset for ngram. 
    * @generated */
-  public void setBigrams(StringArray v) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_bigrams == null)
-      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams, jcasType.ll_cas.ll_getFSRef(v));}    
-    
-  /** indexed getter for bigrams - gets an indexed value - Array of bigram strings (2-token pairs).
-   * @generated */
-  public String getBigrams(int i) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_bigrams == null)
-      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams), i);
-    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams), i);}
-
-  /** indexed setter for bigrams - sets an indexed value - Array of bigram strings (2-token pairs).
-   * @generated */
-  public void setBigrams(int i, String v) { 
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_bigrams == null)
-      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams), i);
-    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_bigrams), i, v);}
+  public void setEnd(int v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_end == null)
+      jcasType.jcas.throwFeatMissing("end", "edu.cmu.cs.wfeely.hw1.Ngram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_end, v);}    
    
     
   //*--------------*
-  //* Feature: trigrams
+  //* Feature: ngram
 
-  /** getter for trigrams - gets Array of trigram strings (3-token triples).
+  /** getter for ngram - gets Ngram string.
    * @generated */
-  public StringArray getTrigrams() {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_trigrams == null)
-      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams)));}
+  public String getNgram() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_ngram == null)
+      jcasType.jcas.throwFeatMissing("ngram", "edu.cmu.cs.wfeely.hw1.Ngram");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Ngram_Type)jcasType).casFeatCode_ngram);}
     
-  /** setter for trigrams - sets Array of trigram strings (3-token triples). 
+  /** setter for ngram - sets Ngram string. 
    * @generated */
-  public void setTrigrams(StringArray v) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_trigrams == null)
-      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setNgram(String v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_ngram == null)
+      jcasType.jcas.throwFeatMissing("ngram", "edu.cmu.cs.wfeely.hw1.Ngram");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Ngram_Type)jcasType).casFeatCode_ngram, v);}    
+   
     
-  /** indexed getter for trigrams - gets an indexed value - Array of trigram strings (3-token triples).
-   * @generated */
-  public String getTrigrams(int i) {
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_trigrams == null)
-      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams), i);
-    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams), i);}
+  //*--------------*
+  //* Feature: order
 
-  /** indexed setter for trigrams - sets an indexed value - Array of trigram strings (3-token triples).
+  /** getter for order - gets Ngram order [1..3].
    * @generated */
-  public void setTrigrams(int i, String v) { 
-    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_trigrams == null)
-      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.cs.wfeely.hw1.Ngram");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams), i);
-    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_trigrams), i, v);}
+  public int getOrder() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_order == null)
+      jcasType.jcas.throwFeatMissing("order", "edu.cmu.cs.wfeely.hw1.Ngram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_order);}
+    
+  /** setter for order - sets Ngram order [1..3]. 
+   * @generated */
+  public void setOrder(int v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_order == null)
+      jcasType.jcas.throwFeatMissing("order", "edu.cmu.cs.wfeely.hw1.Ngram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_order, v);}    
   }
 
     
